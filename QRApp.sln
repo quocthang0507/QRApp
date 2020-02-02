@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QRWinForm", "QRApp\QRWinForm.csproj", "{EE2F8C27-5986-467D-A3E7-8957C3375D8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QRWebForm", "QRWebForm\QRWebForm.csproj", "{E9CDD5D6-8047-43F7-95D5-7050AD3A9316}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE2F8C27-5986-467D-A3E7-8957C3375D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE2F8C27-5986-467D-A3E7-8957C3375D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE2F8C27-5986-467D-A3E7-8957C3375D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE2F8C27-5986-467D-A3E7-8957C3375D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9CDD5D6-8047-43F7-95D5-7050AD3A9316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9CDD5D6-8047-43F7-95D5-7050AD3A9316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9CDD5D6-8047-43F7-95D5-7050AD3A9316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9CDD5D6-8047-43F7-95D5-7050AD3A9316}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1071562-3AC9-4F3A-A38E-B1B131298E24}
+	EndGlobalSection
+EndGlobal
