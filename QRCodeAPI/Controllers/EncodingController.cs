@@ -51,16 +51,15 @@ namespace QRCodeAPI.Controllers
 			QRCode qrCode = new QRCode(qrCodeData);
 			Bitmap qrCodeImage = qrCode.GetGraphic(20);
 			// For saving QR Code
-			string urlResult = HttpContext.Current.Server.MapPath("/Images/" + $@"{Guid.NewGuid()}.jpg");
+			string urlResult = HttpContext.Current.Server.MapPath("/Images/" + $@"{Guid.NewGuid()}.png");
 			Image image = qrCodeImage;
-			image.Save(urlResult, ImageFormat.Jpeg);
+			image.Save(urlResult, ImageFormat.Png);
 			// For returning response
 			var result = new HttpResponseMessage(HttpStatusCode.OK);
-			FileStream fileStream = new FileStream(urlResult, FileMode.Open);
 			MemoryStream memoryStream = new MemoryStream();
-			image.Save(memoryStream, ImageFormat.Jpeg);
+			image.Save(memoryStream, ImageFormat.Png);
 			result.Content = new ByteArrayContent(memoryStream.ToArray());
-			result.Content.Headers.ContentType = new MediaTypeHeaderValue("image/jpeg");
+			result.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
 			return result;
 		}
 	}
