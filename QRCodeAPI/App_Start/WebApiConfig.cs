@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 
 namespace QRCodeAPI
 {
@@ -18,6 +15,12 @@ namespace QRCodeAPI
 				name: "DefaultApi",
 				routeTemplate: "api/{controller}/{id}",
 				defaults: new { id = RouteParameter.Optional }
+			);
+
+			config.Routes.MapHttpRoute(
+				name: "ExtendApi",
+				routeTemplate: "api/{controller}/{action}/{text}",
+				defaults: new { text = RouteParameter.Optional }
 			);
 		}
 	}
