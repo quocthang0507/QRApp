@@ -30,6 +30,7 @@
 		{
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.btnTransfer = new System.Windows.Forms.Button();
 			this.btnSave = new System.Windows.Forms.Button();
 			this.pbxPreview = new System.Windows.Forms.PictureBox();
 			this.label2 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
 			this.btnBrowse = new System.Windows.Forms.Button();
 			this.savePicture = new System.Windows.Forms.SaveFileDialog();
 			this.openPicture = new System.Windows.Forms.OpenFileDialog();
-			this.btnTransfer = new System.Windows.Forms.Button();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pbxPreview)).BeginInit();
@@ -87,8 +87,20 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "QR Code Generator";
 			// 
+			// btnTransfer
+			// 
+			this.btnTransfer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btnTransfer.Location = new System.Drawing.Point(269, 145);
+			this.btnTransfer.Name = "btnTransfer";
+			this.btnTransfer.Size = new System.Drawing.Size(75, 23);
+			this.btnTransfer.TabIndex = 4;
+			this.btnTransfer.Text = ">>";
+			this.btnTransfer.UseVisualStyleBackColor = true;
+			this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
+			// 
 			// btnSave
 			// 
+			this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.btnSave.Location = new System.Drawing.Point(188, 145);
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Size = new System.Drawing.Size(75, 23);
@@ -99,6 +111,9 @@
 			// 
 			// pbxPreview
 			// 
+			this.pbxPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.pbxPreview.BackColor = System.Drawing.Color.White;
 			this.pbxPreview.Location = new System.Drawing.Point(83, 178);
 			this.pbxPreview.Name = "pbxPreview";
@@ -118,6 +133,7 @@
 			// 
 			// btnGenerate
 			// 
+			this.btnGenerate.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.btnGenerate.Location = new System.Drawing.Point(107, 145);
 			this.btnGenerate.Name = "btnGenerate";
 			this.btnGenerate.Size = new System.Drawing.Size(75, 23);
@@ -128,6 +144,8 @@
 			// 
 			// tbxContent_First
 			// 
+			this.tbxContent_First.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbxContent_First.Location = new System.Drawing.Point(83, 39);
 			this.tbxContent_First.Multiline = true;
 			this.tbxContent_First.Name = "tbxContent_First";
@@ -161,6 +179,8 @@
 			// 
 			// tbxContent_After
 			// 
+			this.tbxContent_After.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tbxContent_After.Location = new System.Drawing.Point(85, 363);
 			this.tbxContent_After.Multiline = true;
 			this.tbxContent_After.Name = "tbxContent_After";
@@ -170,6 +190,7 @@
 			// 
 			// label4
 			// 
+			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.label4.AutoSize = true;
 			this.label4.Location = new System.Drawing.Point(8, 363);
 			this.label4.Name = "label4";
@@ -179,6 +200,7 @@
 			// 
 			// btnDecode
 			// 
+			this.btnDecode.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.btnDecode.Location = new System.Drawing.Point(220, 28);
 			this.btnDecode.Name = "btnDecode";
 			this.btnDecode.Size = new System.Drawing.Size(75, 23);
@@ -198,6 +220,9 @@
 			// 
 			// pbxImage
 			// 
+			this.pbxImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.pbxImage.BackColor = System.Drawing.Color.White;
 			this.pbxImage.Location = new System.Drawing.Point(85, 57);
 			this.pbxImage.Name = "pbxImage";
@@ -208,6 +233,7 @@
 			// 
 			// btnBrowse
 			// 
+			this.btnBrowse.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.btnBrowse.Location = new System.Drawing.Point(139, 28);
 			this.btnBrowse.Name = "btnBrowse";
 			this.btnBrowse.Size = new System.Drawing.Size(75, 23);
@@ -230,16 +256,6 @@
 			this.openPicture.FilterIndex = 2;
 			this.openPicture.RestoreDirectory = true;
 			this.openPicture.Title = "Select a QR Code";
-			// 
-			// btnTransfer
-			// 
-			this.btnTransfer.Location = new System.Drawing.Point(269, 145);
-			this.btnTransfer.Name = "btnTransfer";
-			this.btnTransfer.Size = new System.Drawing.Size(75, 23);
-			this.btnTransfer.TabIndex = 4;
-			this.btnTransfer.Text = ">>";
-			this.btnTransfer.UseVisualStyleBackColor = true;
-			this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
 			// 
 			// Form1
 			// 

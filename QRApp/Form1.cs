@@ -1,10 +1,11 @@
-﻿using Bytescout.BarCodeReader;
-using QRCoder;
+﻿using QRCoder;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
+using ZXing;
 
 namespace QRApp
 {
@@ -65,12 +66,12 @@ namespace QRApp
 		{
 			if (pbxImage.Image != null)
 			{
-				Reader reader = new Reader();
-				reader.RegistrationName = "demo";
-				reader.RegistrationKey = "demo";
-				reader.BarcodeTypesToFind.QRCode = true;
-				FoundBarcode[] barcodes = reader.ReadFrom((Bitmap)pbxImage.Image);
-				tbxContent_After.Text = barcodes[0].Value;
+				var reader = new BarcodeReader();
+				var result = reader.Decode(new Bitmap(pbxImage.Image));
+				if (result != null)
+				{
+					tbxContent_After.Text = result.Text;
+				}
 			}
 		}
 
