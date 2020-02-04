@@ -13,13 +13,7 @@ namespace QRCodeAPI
 
 			config.Routes.MapHttpRoute(
 				name: "DefaultApi",
-				routeTemplate: "api/{controller}/{id}",
-				defaults: new { id = RouteParameter.Optional }
-			);
-
-			config.Routes.MapHttpRoute(
-				name: "ExtendApi",
-				routeTemplate: "api/{controller}/{action}/{text}",
+				routeTemplate: "api/{controller}/{text}",
 				defaults: new { text = RouteParameter.Optional }
 			);
 		}

@@ -1,6 +1,5 @@
 ﻿using QRCoder;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -15,52 +14,85 @@ namespace QRCodeAPI.Controllers
 	public class EncodingController : ApiController
 	{
 		// GET api/encoding
-		public IEnumerable<string> Get()
+		public HttpResponseMessage Get()
 		{
-			return new string[] { "value1", "value2" };
+			return Response(new StringContent("<h2>Welcome to QR Code Generator &amp Reader API</h2>"), "text/html");
 		}
 
 		// GET api/encoding/5
-		public int Get(int id)
+		public HttpResponseMessage Get(string text)
 		{
-			return id;
+			return Process(text);
 		}
 
 		// POST api/encoding
-		public void Post([FromBody]string value)
+		public HttpResponseMessage Post([FromBody]string value)
 		{
+			return Process(value);
 		}
 
-		// PUT api/encoding/5
-		public void Put(int id, [FromBody]string value)
+		/// <summary>
+		/// Generate QR Code from text using QRCoder library
+		/// </summary>
+		/// <param name="text">Content which you want to create from</param>
+		/// <returns></returns>
+		private Image GenerateQR(string text)
 		{
-		}
-
-		// DELETE api/encoding/5
-		public void Delete(int id)
-		{
-		}
-
-		[HttpGet]
-		// api/encoding/create/5
-		public HttpResponseMessage Create(string text)
-		{
-			// For creating QR Code
 			QRCodeGenerator qrGenerator = new QRCodeGenerator();
 			QRCodeData qrCodeData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
 			QRCode qrCode = new QRCode(qrCodeData);
 			Bitmap qrCodeImage = qrCode.GetGraphic(20);
-			// For saving QR Code
-			string urlResult = HttpContext.Current.Server.MapPath("/Images/" + $@"{Guid.NewGuid()}.png");
-			Image image = qrCodeImage;
-			image.Save(urlResult, ImageFormat.Png);
-			// For returning response
-			var result = new HttpResponseMessage(HttpStatusCode.OK);
-			MemoryStream memoryStream = new MemoryStream();
-			image.Save(memoryStream, ImageFormat.Png);
-			result.Content = new ByteArrayContent(memoryStream.ToArray());
-			result.Content.Headers.ContentType = new MediaTypeHeaderValue("image/png");
-			return result;
+			return qrCodeImage;
+		}
+
+		/// <summary>
+		/// Response represented as a result to response client request
+		/// </summary>
+		/// <param name="content"></param>
+		/// <param name="header"></param>
+		/// <returns></returns>
+		private HttpResponseMessage Response(HttpContent content, string header)
+		{
+			var response = new HttpResponseMessage(HttpStatusCode.OK);
+			response.Content = content;
+			response.Content.Headers.ContentType = new MediaTypeHeaderValue(header);
+			return response;
+		}
+
+		/// <summary>
+		/// Redirect to other url
+		/// </summary>
+		/// <param name="url"></param>
+		/// <returns></returns>
+		private HttpResponseMessage RedirectURL(string url)
+		{
+			var response = Request.CreateResponse(HttpStatusCode.Moved);
+			response.Headers.Location = new Uri(url);
+			return response;
+		}
+
+		/// <summary>
+		/// Combine generating QR code method and responsing the client request method
+		/// </summary>
+		/// <param name="text"></param>
+		/// <returns></returns>
+		private HttpResponseMessage Process(string text)
+		{
+			if (text != null)
+			{
+				// For saving QR Code
+				string urlResult = HttpContext.Current.Server.MapPath("/Images/" + $@"{Guid.NewGuid()}.png");
+				Image image = GenerateQR(text);
+				image.Save(urlResult, ImageFormat.Png);
+				// For returning response message
+				MemoryStream memoryStream = new MemoryStream();
+				image.Save(memoryStream, ImageFormat.Png);
+				return Response(new ByteArrayContent(memoryStream.ToArray()), "image/png");
+			}
+			else
+			{
+				return Response(new StringContent("<h2>There has been an error when processing your request</h2>"), "text/html");
+			}
 		}
 	}
 }
