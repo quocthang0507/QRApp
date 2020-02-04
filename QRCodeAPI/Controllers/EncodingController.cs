@@ -53,8 +53,10 @@ namespace QRCodeAPI.Controllers
 		/// <returns></returns>
 		private HttpResponseMessage Response(HttpContent content, string header)
 		{
-			var response = new HttpResponseMessage(HttpStatusCode.OK);
-			response.Content = content;
+			var response = new HttpResponseMessage(HttpStatusCode.OK)
+			{
+				Content = content
+			};
 			response.Content.Headers.ContentType = new MediaTypeHeaderValue(header);
 			return response;
 		}
@@ -90,9 +92,7 @@ namespace QRCodeAPI.Controllers
 				return Response(new ByteArrayContent(memoryStream.ToArray()), "image/png");
 			}
 			else
-			{
 				return Response(new StringContent("<h2>There has been an error when processing your request</h2>"), "text/html");
-			}
 		}
 	}
 }

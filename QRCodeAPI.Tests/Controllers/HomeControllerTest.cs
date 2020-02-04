@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using QRCodeAPI.Controllers;
 using System.Web.Mvc;
 
 namespace QRCodeAPI.Tests.Controllers
