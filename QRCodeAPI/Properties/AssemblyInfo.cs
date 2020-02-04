@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("QRCodeAPI")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("QR Code Generator & Reader")]
+[assembly: AssemblyDescription("QR Code Generator & Reader")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("QRCodeAPI")]
+[assembly: AssemblyCompany("La Quoc Thang")]
+[assembly: AssemblyProduct("QR Code Generator & Reader")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

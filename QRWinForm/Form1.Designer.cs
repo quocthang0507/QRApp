@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.btnTransfer = new System.Windows.Forms.Button();
@@ -63,7 +64,7 @@
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-			this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(11, 11, 11, 11);
+			this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(11);
 			this.tableLayoutPanel1.RowCount = 1;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 532F));
@@ -266,6 +267,7 @@
 			this.ClientSize = new System.Drawing.Size(884, 461);
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Form1";
 			this.Text = "QR Code Generator and Reader";
 			this.tableLayoutPanel1.ResumeLayout(false);

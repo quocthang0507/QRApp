@@ -4,13 +4,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("QRApp")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("QR Code Generator & Reader")]
+[assembly: AssemblyDescription("QR Code Generator & Reader")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("QRApp")]
+[assembly: AssemblyCompany("La Quoc Thang")]
+[assembly: AssemblyProduct("QR Code Generator & Reader")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("ITDLU")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
