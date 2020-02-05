@@ -1,6 +1,6 @@
-﻿using System;
+﻿using QRCodeAPI.Models;
+using System;
 using System.Drawing;
-using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -15,10 +15,11 @@ namespace QRCodeAPI.Controllers
 		// GET api/decoding
 		public HttpResponseMessage Get()
 		{
-			return Response(new StringContent("<h2>Welcome to QR Code Generator &amp Reader API</h2>"), "text/html");
+			return Response(new StringContent("<h2>Welcome to QR Code Generator &amp Reader API</br>You must involve authentication in your request.</h2>"), "text/html");
 		}
 
 		// POST api/decoding
+		[BasicAuthentication]
 		public HttpResponseMessage Post()
 		{
 			string path = Upload();

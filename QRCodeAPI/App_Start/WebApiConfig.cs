@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using QRCodeAPI.Models;
+using System.Web.Http;
 
 namespace QRCodeAPI
 {
@@ -6,6 +7,9 @@ namespace QRCodeAPI
 	{
 		public static void Register(HttpConfiguration config)
 		{
+			// Basic Authentication for website
+			config.Filters.Add(new BasicAuthenticationAttribute());
+			
 			// Web API configuration and services
 
 			// Web API routes

@@ -6,7 +6,7 @@ namespace QRCodeAPI.Controllers
 	{
 		public ActionResult Index()
 		{
-			ViewBag.Title = "Home Page";
+			ViewBag.Title = "QR APIs";
 
 			return View();
 		}
