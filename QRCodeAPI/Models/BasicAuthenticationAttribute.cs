@@ -13,6 +13,7 @@ namespace QRCodeAPI.Models
 	public class BasicAuthenticationAttribute : AuthorizationFilterAttribute
 	{
 		private const string Realm = "My realm";
+
 		public override void OnAuthorization(HttpActionContext actionContext)
 		{
 			if (actionContext.Request.Headers.Authorization == null)
