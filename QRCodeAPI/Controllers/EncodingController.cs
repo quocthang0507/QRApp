@@ -28,7 +28,7 @@ namespace QRCodeAPI.Controllers
 		}
 
 		// POST api/encoding
-		public HttpResponseMessage Post([FromBody]string value)
+		public HttpResponseMessage Post([FromBody] string value)
 		{
 			return Process(value);
 		}

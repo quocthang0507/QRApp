@@ -10,12 +10,6 @@ namespace QRCodeAPI.Models
 			list.Add(new User()
 			{
 				ID = 1,
-				Username = "laquocthang",
-				Password = "laquocthang"
-			});
-			list.Add(new User()
-			{
-				ID = 2,
 				Username = "admin",
 				Password = "admin"
 			});

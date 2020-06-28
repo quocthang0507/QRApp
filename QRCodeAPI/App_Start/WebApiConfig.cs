@@ -9,7 +9,7 @@ namespace QRCodeAPI
 		{
 			// Basic Authentication for website
 			config.Filters.Add(new BasicAuthenticationAttribute());
-			
+
 			// Web API configuration and services
 
 			// Web API routes
